@@ -1,0 +1,14 @@
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\obj\Debug\Example.csprojResolveAssemblyReference.cache
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\obj\Debug\Example.csproj.CoreCompileInputs.cache
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\bin\Debug\Example.exe.config
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\bin\Debug\Example.exe
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\bin\Debug\Example.pdb
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\bin\Debug\Spitfire.dll
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\bin\Debug\Spitfire.pdb
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\bin\Debug\Spitfire.xml
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\obj\Debug\Example.exe
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\obj\Debug\Example.pdb
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\obj\Debug\Example.Form1.resources
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\obj\Debug\Example.csproj.GenerateResource.Cache
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nathan\Downloads\spitfire-master\spitfire-master\Example\bin\Debug\Newtonsoft.Json.xml

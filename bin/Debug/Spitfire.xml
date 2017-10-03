@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Spitfire"
+    </assembly>
+    <members>
+        <member name="M:Spitfire.SpitfireRtc.DataChannelSendData(System.String,System.Byte[])">
+            <summary>
+Send your binary data through the data channel
+Be aware that channels have a 16KB limit and you should take advantage 
+Of the provided utilties to chunk messages quickly.
+</summary>
+        </member>
+        <member name="M:Spitfire.SpitfireRtc.GetDataChannelState(System.String)">
+            <summary>
+Returns the current state of a given data channel
+</summary>
+        </member>
+        <member name="M:Spitfire.SpitfireRtc.GetDataChannelInfo(System.String)">
+            <summary>
+Returns a snapshot of information on the target data channel, including its state and structure.
+</summary>
+        </member>
+        <member name="M:Spitfire.SpitfireRtc.DataChannelSendText(System.String,System.String)">
+            <summary>
+Send your text through the data channel
+</summary>
+        </member>
+        <member name="M:Spitfire.SpitfireRtc.CreateDataChannel(Spitfire.DataChannelOptions)">
+            <summary>
+Creates a data channel from within the application.
+Only call if your application is setting up the connection and preparing to offer.
+</summary>
+        </member>
+        <member name="M:Spitfire.SpitfireRtc.SetOfferRequest(System.String)">
+            <summary>
+Provides an offer to your peer connection from a remote peer
+This is used to setup the data channel between two peers. 
+</summary>
+        </member>
+        <member name="M:Spitfire.SpitfireRtc.ProcessMessages(System.Int32)">
+            <summary>
+Run this within a loop to process signaling messages for your peer.
+</summary>
+        </member>
+        <member name="M:Spitfire.SpitfireRtc.InitializePeerConnection">
+            <summary>
+Creates a peer connection, call InitializeSSL before calling this.
+</summary>
+        </member>
+        <member name="M:Spitfire.SpitfireRtc.CleanupSSL">
+            <summary>
+Attempts to clean up SSL threads.
+</summary>
+        </member>
+        <member name="M:Spitfire.SpitfireRtc.InitializeSSL">
+            <summary>
+Setups and ensures SSL is working.
+</summary>
+        </member>
+        <member name="M:Spitfire.SpitfireRtc.EnableLogging">
+            <summary>
+Enables logging of WebRTC verbosely 
+You'll likely want to do this for debugging WebRTC itself.
+</summary>
+        </member>
+        <member name="E:Spitfire.SpitfireRtc.OnBufferAmountChange">
+            <summary>
+Lets you know the buffer has changed and gives a snapshot of the current buffer
+Along with the current amount of data that has been sent/received. 
+</summary>
+        </member>
+        <member name="E:Spitfire.SpitfireRtc.OnIceStateChange">
+            <summary>
+Informs you have the latest changes to the active ICE candidates state. 
+This will always provide you the best information of if a peer has been lost (albeit delayed).
+</summary>
+        </member>
+        <member name="E:Spitfire.SpitfireRtc.OnDataChannelClose">
+            <summary>
+Signals that the data channel has been closed, this is not
+Guaranteed to fire at all, so trust it as far as you can throw it.
+Best paired with OnIceStateChange for best results.
+</summary>
+        </member>
+        <member name="E:Spitfire.SpitfireRtc.OnDataChannelOpen">
+            <summary>
+Signals that the data channel is opened and ready for interaction
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelOptions.Id">
+            <summary>
+ The stream id, or SID, for SCTP data channels. -1 if unset (see Negotiated).
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelOptions.Negotiated">
+            <summary>
+True if the channel has been externally negotiated and we do not send an
+in-band signalling in the form of an "open" message. If this is true, Id
+must be set; otherwise it should be unset and will be negotiated
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelOptions.Protocol">
+            <summary>
+This is set by the application and opaque to the WebRTC implementation.
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelOptions.MaxRetransmits">
+            <summary>
+The max number of retransmissions. -1 if unset.
+Cannot be set along with |MaxRetransmitTime|.
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelOptions.MaxRetransmitTime">
+            <summary>
+The max period of time in milliseconds in which retransmissions will be
+sent. After this time, no more retransmissions will be sent. -1 if unset.
+Cannot be set along with |MaxRetransmits|.
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelOptions.Ordered">
+            <summary>
+True if ordered delivery is required.
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelOptions.Reliable">
+            <summary>
+Deprecated. Reliability is assumed, and channel will be unreliable if
+MaxRetransmitTime or MaxRetransmits is set.
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelOptions.Label">
+            <summary>
+The name of your data channel
+</summary>
+        </member>
+        <member name="T:Spitfire.IceConnectionState">
+            <summary>
+                <seealso href="http://www.w3.org/TR/webrtc/#rtciceconnectionstate-enum" />
+            </summary>
+        </member>
+        <member name="F:Spitfire.IceConnectionState.Closed">
+            <summary>
+The ICE Agent has shut down and is no longer responding to STUN requests.
+</summary>
+        </member>
+        <member name="F:Spitfire.IceConnectionState.Disconnected">
+            <summary>
+Liveness checks have failed for one or more components.
+This is more aggressive than failed, and may trigger 
+intermittently(and resolve itself without action) on a flaky network.
+</summary>
+        </member>
+        <member name="F:Spitfire.IceConnectionState.Failed">
+            <summary>
+The ICE Agent is finished checking all candidate pairs and failed to find a connection for at least one component.
+</summary>
+        </member>
+        <member name="F:Spitfire.IceConnectionState.Completed">
+            <summary>
+The ICE Agent has finished gathering and checking and found a connection for all components.
+</summary>
+        </member>
+        <member name="F:Spitfire.IceConnectionState.Connected">
+            <summary>
+The ICE Agent has found a usable connection for all components but is 
+still checking other candidate pairs to see if there is a better 
+connection.It may also still be gathering.
+</summary>
+        </member>
+        <member name="F:Spitfire.IceConnectionState.Checking">
+            <summary>
+The ICE Agent has received remote candidates on at least one component, 
+and is checking candidate pairs but has not yet found a connection.
+In addition to checking, it may also still be gathering.
+</summary>
+        </member>
+        <member name="F:Spitfire.IceConnectionState.New">
+            <summary>
+The ICE Agent is gathering addresses and / or waiting 
+for remote candidates to be supplied.
+</summary>
+        </member>
+        <member name="T:Spitfire.DataChannelState">
+            <summary>
+                <seealso href="http://w3c.github.io/webrtc-pc/#idl-def-RTCDataChannelState" />
+            </summary>
+        </member>
+        <member name="F:Spitfire.DataChannelState.Closed">
+            <summary>
+The underlying data transport has been closed or could not be established.
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelState.Closing">
+            <summary>
+The procedure to close down the underlying data transport has started.
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelState.Open">
+            <summary>
+The underlying data transport is established and communication is possible. 
+This is the initial state of a RTCDataChannel object dispatched as a part of a RTCDataChannelEvent.
+</summary>
+        </member>
+        <member name="F:Spitfire.DataChannelState.Connecting">
+            <summary>
+Attempting to establish the underlying data transport. 
+This is the initial state of a RTCDataChannel object created with createDataChannel().
+</summary>
+        </member>
+    </members>
+</doc>
